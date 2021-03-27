@@ -24,7 +24,7 @@ export default class TerminalController{
     #onInputReceived(eventEmitter){
         return function () {
             const message = this.getValue()
-            console.log(message)
+            eventEmitter.emit(constants.events.app.MESSAGE_SENT, message)
             this.clearValue()
         }
     }
@@ -87,12 +87,12 @@ export default class TerminalController{
         components.screen.render();
 
         // setInterval(() => {
-            const users = ['maisa']
-            eventEmitter.emit(constants.events.app.STATUS_UPDATED, users)
-            users.push('victor')
-            eventEmitter.emit(constants.events.app.STATUS_UPDATED, users)
-            users.push('belanna', 'neelix')
-            eventEmitter.emit(constants.events.app.STATUS_UPDATED, users)
+            // const users = ['maisa']
+            // eventEmitter.emit(constants.events.app.STATUS_UPDATED, users)
+            // users.push('victor')
+            // eventEmitter.emit(constants.events.app.STATUS_UPDATED, users)
+            // users.push('belanna', 'neelix')
+            // eventEmitter.emit(constants.events.app.STATUS_UPDATED, users)
         // }, 1000)
     }
 }

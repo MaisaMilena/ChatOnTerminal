@@ -1,7 +1,7 @@
 export default class CliConfig {
   
   constructor({username, room, hostUri}){
-    this.username = username;
+    this.userName = username;
     this.room = room;
     const {hostname, port, protocol} = new URL(hostUri)
     this.host = hostname;
