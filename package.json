@@ -2,7 +2,7 @@
   "name": "semana-js-3",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server/src/index.js",
   "scripts": {
     "start": "node server/src/", 
     "test": "echo \"Error: no test specified\" && exit 1"
