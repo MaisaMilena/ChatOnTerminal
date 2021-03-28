@@ -82,8 +82,10 @@ export default class Controller{
   #logoutUser(id, roomId){
     this.#users.delete(id)
     const usersOnRoom = this.#rooms.get(roomId)
-    usersOnRoom.delete(id)
-    this.#rooms.set(roomId, usersOnRoom)
+    if(usersOnRoom){
+      usersOnRoom.delete(id)
+      this.#rooms.set(roomId, usersOnRoom)
+    }
   }
 
   #onSocketClosed(id){
