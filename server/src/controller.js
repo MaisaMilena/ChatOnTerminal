@@ -21,7 +21,6 @@ export default class Controller{
 
   async joinRoom(socketId, data) {
     const userData = data
-    console.log(data)
     console.log(`${userData.userName} joined! ${[socketId]}`)
     const {roomId} = userData
     const user = this.#updateGlobalUserData(socketId, userData)
@@ -72,11 +71,9 @@ export default class Controller{
   #onSocketData(id){
     return data => {
       try {
-        console.log(data)
         const {event, message} = JSON.parse(data)
         this[event](id, message) 
       } catch (error) {
-        console.log(error)
         console.error(`wrong event format. `, data.toString())
       }
     }

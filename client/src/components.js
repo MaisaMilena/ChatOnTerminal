@@ -18,7 +18,7 @@ export default class ComponentsBuilder {
             mouse: true,
             keys: true,
             top: 0,
-            scrollboar: {
+            scrollbar: {
                 cd: '',
                 inverse: true
             },
